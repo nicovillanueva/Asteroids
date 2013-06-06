@@ -9,6 +9,9 @@ public class Ship : CollisionObject {
 	private Vector3 pos;
 	public float spdLimit = 500.0f;
 	
+	private int width = 540;
+	private int height = 960;
+	
 	private float horizontal;
 	
 	private ExplPool ep;
@@ -64,10 +67,10 @@ public class Ship : CollisionObject {
 		
 		// Screen limit warping
 		// SCREEN: 1024x768
-		if(pos.x > 512-this.transform.localScale.x/2 || pos.x < -512+this.transform.localScale.x/2){
+		if(pos.x > width/2-this.transform.localScale.x/2 || pos.x < -width/2+this.transform.localScale.x/2){
 			pos.x = -pos.x;
 		}
-		if(pos.y > 384-this.transform.localScale.y/2 || pos.y < -384+this.transform.localScale.y/2){
+		if(pos.y > height/2-this.transform.localScale.y/2 || pos.y < -height/2+this.transform.localScale.y/2){
 			pos.y = -pos.y;
 		}
 				
